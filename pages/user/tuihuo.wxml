@@ -1,0 +1,10 @@
+
+<!--pages/order/downline.wxml-->
+<view class="w100">
+  <view class="p_all01 mt10 bg">
+    <view class="p_all">一键复制的内容和下载图片在哪里？</view>
+    <view class="p_all">一键复制和保存需要开启相册的读取权限</view>
+    <view class="p_all">是否需要登录？</view>
+  </view>
+ 
+</view>

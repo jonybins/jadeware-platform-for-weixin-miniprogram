@@ -1,0 +1,30 @@
+<import src="../common/foot.wxml"/>
+<view class="page">
+<!--样式-->  
+<view class="container carts-list" wx:if="{{carts==''}}">
+    <view class="pp">
+         <view class="cla">空空如也</view>
+    </view>
+</view>
+
+
+<view class="container carts-list">
+      <view wx:for="{{carts}}" wx:key="id" class="carts-item" data-title="{{item.name}}" bindtap='moreD' data-id="{{item.id}}">
+        
+        <view>
+            <image class="carts-image" src="{{item.photo_x}}" mode="aspectFill" />
+        </view>
+
+        <!--文字-->
+        <view class="carts-text">
+            <text class="carts-title">{{item.name}}{{item.id}}</text>
+            <!-- 价格显示 -->
+            <view class="carts-subtitle">
+              <text class="carts-price">by admin</text><text>{{item.time}}</text>
+            </view>
+      </view>
+      <!--右边-->
+      </view>
+</view>
+</view>
+

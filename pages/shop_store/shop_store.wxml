@@ -1,0 +1,38 @@
+<!--pages/shop_store/shop_store.wxml-->
+     <!-- <image class="log" src="/images/icons/mm.jpg"></image>  -->
+     <!-- <text class='si'>大师作品</text>  -->
+     <view class="si">
+        <image class="log" src="/images/icons/xiangyun.jpg"></image><image class="log" src="/images/fenlei/ms.jpg"></image><image class="log" src="/images/icons/xiangyun1.jpg"></image>
+    </view> 
+
+   
+<!--2-->
+ <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}" >
+<view class="list">
+    <block wx:for="{{proList}}" wx:key="*this">
+        <view class="ban">
+            <navigator url="../product/detail?productId={{item.id}}" class="cover flex-wrp">
+                <image class="banner" src="{{item.photo_x}}" mode="widthFix"></image>
+          <view class="act-item ellipsis" >
+              <text class="type">{{item.name}}</text>
+            </view>
+              <view class="act-item ellipsis" >
+                <text class="kkk">{{item.intro}}</text>
+            </view>
+            <view class="act-item ellipsis" >
+                <text style="color:red;font-size:10px;">¥ 详询客服</text>
+            </view>
+             <view style="display:flex;line-height:50rpx;color:#999">
+          <view class="gmxx" style="font-size:28rpx;width:30%">
+            <text wx:if="item.is_show==1">新品</text>
+            <text wx:elif="item.is_hot==1">热销</text>
+            <text wx:else>推荐</text>
+          </view>
+          <view class="ku" style="width:60%;font-size:10px;margin-left:70px;">下载：{{item.shiyong}}次</view>
+        </view>
+            </navigator>
+        </view> 
+    </block>
+</view>
+  <view class="mt10" bindtap="getMore">点击查看更多</view>
+ </view> 

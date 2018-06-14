@@ -1,0 +1,71 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+    <view class="userinfo" bindtap='login'>
+			<image class="userinfo-avatar fl_l" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/images/deng.png'}}" background-size="cover"></image>
+			<text class="fl_l">{{userInfo.nickName ? userInfo.nickName : '点击登录'}}</text>
+      <text style='font-size:10px;;'>{{class_sta}}</text>
+    </view>
+    <view class="sc mt10 df">
+        <view class="df_1 tc">
+        <navigator url="../user/shoucang" hover-class="none">
+          <view><image src="/images/shou_c.jpg"></image></view>
+          <text>我的收藏</text>
+          </navigator>
+        </view>
+         <view class="df_1 tc">
+        <navigator url="../order/detail" hover-class="none">
+          <view><image src="/images/icons/iocn_home_01.png"></image></view>
+          <text>我的下载</text>
+          </navigator>
+        </view> 
+        <view class="df_1 tc" bindtap="showHelp">
+          <view><image src="/images/888.jpg"></image></view>
+          <text>帮助中心</text>
+        </view> 
+    </view> 
+
+    <view class="sc mt10 df" on>
+        <view class="df_1 tc" bindtap='call_phone'>
+          <view><image src="/images/dianhua.jpg"></image></view>
+          <text>客服电话</text>
+        </view>
+         <view class="df_1 tc" bindtap='findHer'>
+          <view><image src="/images/ditu.jpg"></image></view>
+          <text>去找她</text>
+        </view> 
+        <view class="df_1 tc" bindtap='privSet'>
+          <view><image src="/images/shouquan.jpg"></image></view>
+          <text>授权设置</text>
+        </view> 
+    </view> 
+    <view></view>
+<view class="qbdd mt110" bindtap='logout' wx:if="{{login}}">
+    <button type="primary" plain="true">退出</button>
+  </view>
+  <view class="help" id="help" wx:if="{{help_status}}" bindtap="tapHelp">
+        <view class="box">
+          <view class="box-hd">
+            <text class="box-title">帮助</text>
+            <image class="box-close" src="/images/icons/aah.png" bindtap="hideHelp"></image>
+          </view>
+          <view class="box-bd">
+          <view class="help-q">1、是否需要登录？</view>
+            <view class="help-a">
+              <text>所有宝贝均可以不登录进行查看，登录后方便查看下载记录和使用收藏功能</text>
+            </view>
+            <view class="help-q">2、一键复制和保存需要开启相册的读取权限？</view>
+            <view class="help-a">
+              <text>只有开启了，才能将相册简介复制保存下来</text>
+            </view>
+            <view class="help-q">3、登录问题</view>
+            <view class="help-a">
+              <text>因为服务器可能有延迟，登录的时候可能出现无法显示用户的身份.用户需要下拉刷新便可</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+</view>
+
+

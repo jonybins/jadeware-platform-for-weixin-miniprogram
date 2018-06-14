@@ -1,0 +1,5 @@
+<template name="foot">
+    <view style='font-size:10px;'>
+    <text >Copyrights©2018 Designed by JonyBin</text>
+    </view>
+</template>

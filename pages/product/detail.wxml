@@ -1,0 +1,105 @@
+<view class="progress-box" wx:if="{{isdow}}">
+        <progress percent="{{jindu}}" active stroke-width="13" color='red' show-info='true' activeColor='green' />
+        <!-- <icon class="progress-cancel" type="cancel"></icon> -->
+</view>
+<!--内容开始-->
+<view class="cont">
+  <swiper style="height:370px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{bannerItem}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="title">{{itemData.name}}</view>
+  <view class="gmxx">
+    <view><span class="jiage">¥：<contact-button class="pos"></contact-button>详询客服</span></view>
+    <view class="font_14 c6">品牌：{{itemData.brand}} <span class="c6 fl_r font_14" style='color:#ccc'>浏览：{{itemData.renqi}}</span></view>
+    
+    <view class="font_14 c6">使用方式：代理  <span class="c6 fl_r font_14" style='color:#ccc'>下载：{{itemData.shiyong}}</span></view>
+  <view class="font_14 c6">
+    <button class="bu_t" open-type="share"><span style='color:green;font-size:15px;'><image class="icon_im" src="/images/icons/share.png" ></image>分享到微信</span></button>
+    </view>
+  </view>
+</view>
+<view class="changjian">
+    <span>----常见问题-----</span>
+        <view class="wenti"><image class="icon_im" src='/images/icons/wenti.png'></image>一键复制和保存需要开启相册的读取权限？</view>
+        <view class="changjian deal" >一键复制和保存的原理是批量下载宝贝图片到您的手机相册里面，因此需要您同意开启小程序访问相册的权限。</view>
+        <view class="wenti"><image class="icon_im" src='/images/icons/wenti.png'></image>我是否要登录？</view>
+        <view class="changjian deal" >所有宝贝均可以不登录进行查看，但是，如果下载，收藏和复制就需要用户登录之后，才能使用</view>
+        <view class="wenti"><image class="icon_im" src='/images/icons/wenti.png'></image>一键复制简介和下载图片有哪些？</view>
+        <view class="changjian deal" >一键复制的有：1、产品描述保存在系统的粘贴板中方便直接复制到其他地方。2：主图详情下载到手机中</view>
+    </view>
+
+<!--图文详情头部-->
+<view>
+<view class="swiper-tab">
+  <view class="bre swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">图文详情</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">产品参数</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+  <!-- 图文详情 -->
+  <swiper-item>
+    <import src="../../wxParse/wxParse.wxml"/> 
+    <view class="wxParse">
+        <scroll-view style="height:2000rpx;" scroll-y='true'>
+          <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </scroll-view>
+    </view>
+  </swiper-item>
+  
+    
+
+  <!-- 产品参数 -->
+  <swiper-item>
+        <view class="p_all">
+      <view class="canshu df">
+        <view class="name">商品名称：</view>
+        <view class="df_1 c3">{{itemData.name}}</view>
+      </view>
+      <view class="canshu df">
+        <view class="name">商品编号：</view>
+        <view class="df_1 c3">{{itemData.pro_number}}</view>
+      </view>
+      <view class="canshu df">
+        <view class="name">分类：</view>
+        <view class="df_1 c3">{{itemData.cat_name}}</view>
+      </view>
+      <view class="canshu df">
+        <view class="name">质量：</view>
+        <view class="df_1 c3">保证货真价实，手工加工</view>
+      </view>
+      <view class="canshu df">
+        <view class="name">上架：</view>
+        <view class="df_1 c3">{{itemData.addtime}}</view>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>   
+</view>
+
+<!---底部开始-->
+<view class="footfixed tc">
+  <view class="fl_l w40 font_12 hui03 df">
+          <view class="df_1 l_h15 pt5 bre">
+                <contact-button type="default-light" session-from="productId_{{itemData.id}}" class="ke">
+                <contact-button class="pos"></contact-button>
+                  <image class="icon_kf" src="/images/kefu.png" style="margin-right:20px;"></image>
+                  <view class="dbtext" style="line;margin-top:5px">客服</view>
+                </contact-button >
+          </view>
+            <view class="df_1 l_h15 pt5">
+              <view bindtap="addFavorites">
+                 <!-- /images/shc.png <image src='images/icons/index1.png' class="jjj">-->
+                    <image class="icon_kf" src="/images/{{img}}"></image>
+                    <view bindtap="addFavorites" class="dbtext">收藏</view>
+              </view>
+            </view>
+  </view>
+  <view class="fl_l w60">
+      <!-- <view class="w50 fl_l bg_cheng white" ></image></view>   -->
+      <view class="bg_red white w50 fl_l" bindtap="kickDow" data-status="1">一键复制简介和下载图片</view>
+  </view>
+   </view>

@@ -1,0 +1,98 @@
+/* pages/news/detail.wxss */
+.first{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  margin-top:40px
+}
+.second{
+  width:200px;
+  height:0.01px;
+  border:0.01px solid black;
+  margin-left: 18%;
+  margin-top:7px;
+}
+/*外部容器*/
+swiper-item{
+  overflow: auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top:-350px;
+} 
+ /*复选框样式*/
+.carts-list icon {
+  margin-top: 60rpx;
+  margin-right: 20rpx;
+}
+/*整体列表*/
+.carts-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 40rpx;
+   background: #fff;
+}
+ 
+/*每行单元格*/
+.carts-item {
+  display: flex;
+  flex-direction: row;
+  height:180rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width:100%;
+  border-bottom: 1px solid #eee;
+  /* padding: 20rpx 0; */
+  border: 1px solid #90EE90;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow:5px 5px 1px #90EE90;
+}
+ 
+/*左部图片*/
+.carts-image {
+  width:180rpx;
+  height:180rpx;
+  border-radius: 9px;
+}
+ .kong{
+     width:200rpx;
+  height:200rpx;
+ }
+ 
+/*右部描述*/
+.carts-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+/*右上部分标题*/
+.carts-title {
+  margin: 10rpx;
+  font-size: 35rpx;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* width: 201rpx; */
+} 
+/*右下部分价格与数量*/
+.carts-subtitle {
+  font-size: 30rpx;
+  color:darkgray;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+ 
+/*价格*/
+.carts-price {
+  color: #f60;
+}

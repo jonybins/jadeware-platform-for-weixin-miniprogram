@@ -1,0 +1,163 @@
+/**index.wxss**/
+
+.page {
+  font-family: '微软雅黑';
+  background-color: #fff;
+}
+
+.swiper-item {
+  display: block;
+  height: 150px;
+}
+.swiper{
+  background-color:	#B0C4DE ;
+}
+.slide-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 30rpx;
+}
+/* //首页分类栏 */
+
+/*搜索栏*/
+.header {
+	/* position: fixed; */
+	display: -webkit-flex;
+	left: 0;
+	top: 0;
+	width: 100%;
+	padding: 20rpx;
+	box-sizing: border-box;
+	z-index: 1;
+	-webkit-transition: background 0.5s ease-in-out;
+}
+.header.scrolled {
+	background: #feb70f;
+}
+.header .icon {
+	width: 40rpx;
+	height: 40rpx;
+	vertical-align: top;
+}
+.header .search {
+	-webkit-flex: 1;
+	color: #888;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	padding: 10rpx;
+	border-radius: 30rpx;
+	background:#F5F5F5;
+  text-align: center;
+	/*border-bottom: 1rpx solid #aaa;*/
+}
+.category {
+  padding: 15px 0 10px 0;
+  overflow: auto;
+  background-color: #FFF;
+  margin-bottom: -1px;
+  border-bottom:1px solid green;
+}
+.category_item {
+  width: 25%;
+  float: left;
+  margin-bottom: 10px;
+}
+.icon_wrap {
+  width: 40px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+.index_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.category_item_text {
+  text-align: center;
+  font-size: 13px;
+  color: #737373;
+}
+/*新品上市*/
+.newshop{
+  width:120px;
+  height: 50px;
+  margin-left: 100px;
+}
+/*电话*/
+.phone{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 370px;
+  right:0px;
+  z-index:1
+}
+.phone_im{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+/*商品列表*/
+.cont {
+  width: 100%;
+  background: #fff;
+  padding-top: 1rpx;
+}
+.cont .pr {
+margin-bottom:10px;
+background:#fff;
+display:inline-block;
+width:46%;
+border:1px solid #EDEDED;
+margin-left:18rpx;
+
+}
+.photo{
+  height:345rpx;
+  width:345rpx;
+}
+
+.cont .title {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 20px;
+  margin: 0;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 1% 5% 0 5%;
+
+}
+.gmxx {
+  padding-left:20rpx; 
+  width:74%;
+
+}
+
+.ku{
+  text-align: right;
+  width: 50%; font-size: 26rpx;
+  margin-right:10rpx;
+}
+.mt10 {
+  margin: 0 auto;
+  text-align: center;
+  height: 70rpx;
+  width: 450rpx;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+  border: 1px solid #999;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+.cont_image {
+  width: 100%;
+  height: 285rpx
+}
+icon {
+  vertical-align: middle;
+  line-height: 1px;
+}

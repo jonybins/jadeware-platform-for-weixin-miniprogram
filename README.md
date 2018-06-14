@@ -1,2 +1,4 @@
-# jadeware-platform-for-weixin-miniprogram
-中玉玉器微商平台
+//appid:wx45eec35db7ee6740
+appserect:f90f4b6f55c0ac4c158abe445d0c778b
+
+

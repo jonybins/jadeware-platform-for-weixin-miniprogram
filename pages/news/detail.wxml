@@ -1,0 +1,42 @@
+<view class="list">
+    <view class='first'>
+      <text>{{info.name}}</text>
+      <view class="second"></view>
+    </view>
+
+    <swiper-item>
+    <import src="../../wxParse/wxParse.wxml"/> 
+    <view class="wxParse">
+        <scroll-view style="height:2000rpx;" scroll-y='true'>
+          <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </scroll-view>
+        <view class="container carts-list">
+    <text>其他咨讯</text>
+      <view wx:for="{{carts}}" wx:key="id" class="carts-item" data-title="{{item.name}}" bindtap='moreD' data-id="{{item.id}}">
+        
+        <view>
+            <image class="carts-image" src="{{item.photo_x}}" mode="aspectFill" />
+        </view>
+
+        <!--文字-->
+        <view class="carts-text">
+            <text class="carts-title">{{item.name}}{{item.id}}</text>
+            <!-- 价格显示 -->
+            <view class="carts-subtitle">
+              <text class="carts-price">by admin</text><text>{{item.time}}</text>
+            </view>
+      </view>
+      <!--右边-->
+      </view>
+</view>
+    </view>
+    </swiper-item>
+
+</view>
+
+
+
+
+
+
+

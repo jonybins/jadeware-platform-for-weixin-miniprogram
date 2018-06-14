@@ -1,0 +1,55 @@
+<!--选项卡-->
+<view class="tabTit box tc bg_f">
+    <view class="flex1{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="" data-index="{{index}}" data-id="{{item.id}}" bindtap="filterTab"><text>{{item.name}}</text><image src="/images/arrow.png"></image></view>
+</view>
+<!--筛选项-->
+<view class="tabLayer tc" hidden="{{tab[0]}}">
+    <text class="{{cat_id==0?'active':''}}" data-id="0" data-index="0" data-txt="不限" bindtap="filter">不限</text>
+    <text class="{{cat_id==item.id?'active':''}}" wx:for="{{filterList}}" wx:key="" data-id="{{item.id}}" data-index="0" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+
+<view class="tabLayer tc" hidden="{{tab[1]}}">
+    <text class="{{cat_id==0?'active':''}}" data-id="0" data-index="1" data-txt="不限" bindtap="filter">不限</text>
+    <text class="{{cat_id==item.id?'active':''}}" wx:for="{{filterList}}" wx:key="" data-id="{{item.id}}" data-index="1" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+<view class="tabLayer tc" hidden="{{tab[2]}}">
+    <text class="{{cat_id==0?'active':''}}" data-id="0" data-index="2" data-txt="不限" bindtap="filter">不限</text>
+    <text class="{{cat_id==item.id?'active':''}}" wx:for="{{filterList}}" wx:key="" data-id="{{item.id}}" data-index="2" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+<view class="tabLayer tc" hidden="{{tab[3]}}">
+    <text class="{{cat_id==0?'active':''}}" data-id="0" data-index="3" data-txt="不限" bindtap="filter">不限</text>
+    <text class="{{cat_id==item.id?'active':''}}" wx:for="{{filterList}}" wx:key="" data-id="{{item.id}}" data-index="3" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+
+<view class="w">
+    <view class="cont">
+      <navigator class="pr" url="../product/detail?productId={{item.id}}&renqi={{item.renqi}}" hover-class="changestyle"
+                 wx:for="{{data}}" wx:key="item">
+        <image class="photo" src="{{item.photo_x}}"></image>
+        <view class="title">{{item.name}}</view>
+        <view style="display:flex;line-height:50rpx;padding:10rpx 0;">
+         <view class="gmxx" style="font-size:10px;  color: red;">¥详询客服</view>
+          <!-- <view class="gmx">¥</view> -->
+        </view>
+        <view style="display:flex;line-height:50rpx;color:#999">
+          <view class="gmxx" style="font-size:28rpx;width:30%">
+            <text wx:if="item.is_show==1">新品</text>
+            <text wx:elif="item.is_hot==1">热销</text>
+            <text wx:else>推荐</text>
+          </view>
+          <view class="ku" style="width:60%">下载：{{item.shiyong}}次</view>
+        </view>
+      </navigator>
+    </view>
+    <!--加载更多按钮-->
+    <view wx:if="{{hasMore}}">
+        <button type="warn" plain="true" disabled="{{disabled}}" bindtap="getMore" class="mt20">{{moreTxt}}</button>
+    </view>
+    <!--无数据提示-->
+    <view class="null tc" hidden="{{dataNull}}">
+        <icon type="clear" size="100" color="#ccc"/>
+        <view class="txt1">当前筛选无结果</view>
+        <view class="txt2">您可以尝试筛选其他分类看看</view>
+    </view>
+</view>
+<!--底部-->

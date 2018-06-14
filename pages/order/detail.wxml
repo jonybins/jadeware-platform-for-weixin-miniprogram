@@ -1,0 +1,18 @@
+<!--pages/order/detail.wxml-->
+<view class="w100">
+		<view class="p_all bg_white df item vvv" wx:for="{{dowData}}" wx:key="item">
+			<view class="cp_photo">			
+				<image src="{{item.photo_x}}"></image>
+			</view>
+			<view class="df_1">	
+				<view class="font_14 mt5 ovh1">
+		      {{item.name}}
+		    </view>
+			  <text class="gm_ovh_1h red pt10">¥详细客服</text>
+			  <view class="sl">
+		        下载次数：{{item.num}}<text class="jjj"> 时间：{{item.date}}</text>
+		    </view>
+			</view>
+		</view>		    
+
+</view>
